@@ -142,6 +142,7 @@ VOLUME /var/lib/postgresql/data
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
+RUN apk add --no-cache curl openssl vim
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 5432
